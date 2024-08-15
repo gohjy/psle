@@ -1,4 +1,4 @@
-let h1 = document.querySelector("h1");
+let h1 = document.querySelector("#h1area");
 
 let ending = new Date(2024, 9, 2, 10, 50);
 const f = (x, y) => Math.floor(x/y);
