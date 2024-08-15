@@ -1,7 +1,7 @@
 let h1 = document.querySelector("h1");
 
 let ending = new Date(2024, 9, 2, 10, 50);
-const f = (x, y) => Math.floor(x;
+const f = (x, y) => Math.floor(x/y);
 
 function update() {
   let now = new Date();
