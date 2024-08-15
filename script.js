@@ -11,7 +11,7 @@ function update() {
   let mins = f(left, (60 * 1000)) - (24 * 60 * days) - (60 * hrs);
   let secs = f(left, 1000) - (24 * 60 * 60 * days) - (60 * 60 * hrs) - (60 * mins);
 
-  h1.innerHTML = `${days} <small>days</small> ${hrs}:${mins}:${secs}`;
+  h1.innerHTML = `${days} <small>days</small> ${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 }
 
 update();
