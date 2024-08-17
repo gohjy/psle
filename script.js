@@ -1,6 +1,7 @@
 let h1 = document.querySelector("#h1area");
 let h2 = document.querySelector("#h2area");
 let h3 = document.querySelector("#h3area");
+let dt = document.querySelector("#datetimearea");
 
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -10,10 +11,13 @@ const f = (x, y) => Math.floor(x/y);
 function update() {
   let now = new Date();
   let left = ending - now;
+
+  let formattedDate = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} ${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
+  dt.textContent = formattedDate;
+  
   if (left <= 0) {
-    let formattedDate = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} ${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")}:${now.getSeconds().toString().padStart(2, "0")}`;
-    h2.textContent = formattedDate;
     h1.innerHTML = "PSLE has ended!";
+    h2.style = "display: none;";
     h3.style = "display: none;";
     return;
   }
